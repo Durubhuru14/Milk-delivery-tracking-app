@@ -1,0 +1,22 @@
+{
+    "customers": [
+        {
+            "name": "Customer 1",
+            "deliveries": {
+                "2024-08-18": "Delivered"
+            }
+        },
+        {
+            "name": "Customer 2",
+            "deliveries": {
+                "2024-08-18": "Not Delivered"
+            }
+        },
+        {
+            "name": "Customer 3",
+            "deliveries": {
+                "2024-08-18": "Delivered"
+            }
+        }
+    ]
+}
