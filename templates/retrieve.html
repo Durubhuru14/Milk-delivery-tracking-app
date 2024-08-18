@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Delivery Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Retrieve Delivery Status</h1>
+        <form id="retrieveForm">
+            <label for="customer">Customer:</label>
+            <select id="customer" required>
+                {% for customer in customers %}
+                    <option value="{{ customer.name }}">{{ customer.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="start_date">Start Date (YYYY-MM-DD):</label>
+            <input type="date" id="start_date">
+            <label for="end_date">End Date (YYYY-MM-DD):</label>
+            <input type="date" id="end_date">
+            <button type="submit">Retrieve Status</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/retrieve.js') }}"></script>
+</body>
+</html>

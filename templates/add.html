@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Delivery Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Milk Delivery Tracker</h1>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button onclick="window.location.href='/'">Add Delivery</button>
+            <button onclick="window.location.href='/update'">Update Delivery</button>
+            <button onclick="window.location.href='/retrieve'">Retrieve Delivery</button>
+        </div>
+
+        <p>Date: <span id="currentDate"></span></p>
+        <form id="deliveryForm">
+            <ul>
+                {% for customer in customers %}
+                    <li>
+                        <label>
+                            <input type="checkbox" name="delivered" value="{{ customer.name }}">
+                            {{ customer.name }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+            <button type="submit">Update Delivery Status</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/add.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Delivery Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Delivery Status</h1>
+        <form id="updateDeliveryForm">
+            <label for="customer">Customer:</label>
+            <select id="customer" required>
+                {% for customer in customers %}
+                    <option value="{{ customer.name }}">{{ customer.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="date">Date (YYYY-MM-DD):</label>
+            <input type="date" id="date" required>
+            <label for="status">Status:</label>
+            <select id="status" required>
+                <option value="Delivered">Delivered</option>
+                <option value="Not Delivered">Not Delivered</option>
+            </select>
+            <button type="submit">Update Status</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/update.js') }}"></script>
+</body>
+</html>
